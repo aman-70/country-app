@@ -5,7 +5,7 @@
 .dashboard-wrapper {
 	margin: 0 auto;
 	max-width: 90%;
-	padding-top: 40px;
+	padding: 40px 0;
 }
 
 .find-countries {
@@ -48,7 +48,7 @@ input:focus {
 
 .dropbtn {
 	background-color: hsl(0, 0%, 100%);
-	padding: 16px;
+	padding: 16px 20px;
 	border: none;
 	cursor: pointer;
 	width: 100%;
@@ -82,7 +82,7 @@ input:focus {
 
 .dropdown-content a {
 	color: black;
-	padding: 8px 16px;
+	padding: 8px 20px;
 	text-decoration: none;
 	display: block;
 	font-size: 14px;

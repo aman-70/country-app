@@ -4,7 +4,7 @@ const Navbar = () => {
 	return (
 		<div className="Navbar">
 			<div className="navbar-wrapper">
-				<h2 className="navbar-heading">Where in the world!</h2>
+				<h2 className="navbar-heading">Where in the world?</h2>
 				<div className="dark-mode">
 					<span>
 						<i class="fas fa-moon fa-md"></i>

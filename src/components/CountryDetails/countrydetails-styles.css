@@ -1,0 +1,93 @@
+.CountryDetails {
+	padding: 60px 0;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 16px;
+	color: hsl(200, 15%, 8%);
+}
+
+.countrydetails-wrapper {
+	margin: 0 auto;
+	max-width: 90%;
+	padding: 40px 0;
+}
+
+/* Back button starts */
+
+.back-btn {
+	background-color: hsl(0, 0%, 100%);
+	padding: 10px 30px;
+	box-shadow: 1px 1px 5px hsl(0, 0%, 80%);
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	margin: 0 0 100px;
+}
+
+.back-btn i {
+	margin-right: 10px;
+}
+
+/* Back button ends */
+
+/* Country card starts */
+
+.country-card {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 3em;
+}
+
+.country-flag {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 90%;
+	height: 350px;
+	object-fit: cover;
+	/* height: 180px; */
+}
+
+.country-name {
+	margin: 0 0 20px;
+}
+
+.country-text {
+	padding: 25px 0 0;
+}
+
+.country-info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 0 0 50px;
+}
+
+.country-info p {
+	margin: 0 0 5px;
+}
+
+.country-info p span {
+	font-weight: 600;
+}
+
+.border-countries {
+	display: grid;
+	grid-template-columns: 2fr 7fr;
+	grid-gap: 1em;
+}
+
+.border-countries-heading {
+	align-self: center;
+	font-weight: 600;
+}
+
+.border-countries-names div {
+	display: inline-block;
+	text-align: center;
+	padding: 5px 0;
+	margin: 0 15px 10px 0;
+	width: 120px;
+	box-shadow: 1px 1px 5px hsl(0, 0%, 80%);
+	border-radius: 5px;
+}
+
+/* Country card starts */
