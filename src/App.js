@@ -1,4 +1,5 @@
 import './App.css';
+import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 import FilterDashboard from './components/FilterDashboard/FilterDashboard';
 import Navbar from './components/Navbar/Navbar';
@@ -13,7 +14,7 @@ const App = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
-							<Dashboard />
+							<Home />
 						</Route>
 						<Route path="/details/:id">
 							<CountryDetails />

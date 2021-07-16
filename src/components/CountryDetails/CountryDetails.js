@@ -65,9 +65,9 @@ const CountryDetails = () => {
 										{country.currencies[0].name}
 									</p>
 									<p>
-										<span>Languages: </span>{' '}
-										{country.languages.forEach((elt) => (
-											<p>{elt.name}</p>
+										<span>Languages: </span>
+										{country.languages.map((language) => (
+											<p>{language.name}</p>
 										))}
 									</p>
 									<p>
@@ -84,10 +84,21 @@ const CountryDetails = () => {
 										Border countries:
 									</div>
 									<div className="border-countries-names">
-										{country.borders.forEach(
-											(countrycode) => {
-												<div>countrycode</div>;
-											}
+										{/* {country.borders.map((border) =>
+											axios
+												.get(
+													'https://restcountries.eu/rest/v2/alpha?codes=' +
+														border
+												)
+												.then(<div>{border.name}</div>)
+										)} */}
+
+										{country.borders.length ? (
+											country.borders.map((country) => (
+												<div>{country}</div>
+											))
+										) : (
+											<span>N/A</span>
 										)}
 									</div>
 								</div>

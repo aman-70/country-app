@@ -40,8 +40,8 @@ input:focus {
 
 .gallery {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 4em;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 2em;
 }
 
 /* Dropdown menu starts */
@@ -100,3 +100,7 @@ input:focus {
 }
 
 /* Dropdown menu ends */
+
+/* Mobile view CSS starts */
+
+/* Mobile view CSS ends */
