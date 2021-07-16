@@ -1,7 +1,5 @@
 import './App.css';
-import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
-import FilterDashboard from './components/FilterDashboard/FilterDashboard';
 import Navbar from './components/Navbar/Navbar';
 import CountryDetails from './components/CountryDetails/CountryDetails';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -14,7 +12,7 @@ const App = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
-							<Home />
+							<Dashboard />
 						</Route>
 						<Route path="/details/:id">
 							<CountryDetails />

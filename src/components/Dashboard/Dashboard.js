@@ -2,27 +2,77 @@ import { useState, useEffect } from 'react';
 import './dashboard-styles.css';
 import axios from 'axios';
 import Card from '../Card/Card';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
 	const [countries, setCountries] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 
+	const [searchTerm, setSearchTerm] = useState('');
+
+	const [filterTerm, setFilterTerm] = useState(null);
+
 	useEffect(() => {
-		axios
-			.get('https://restcountries.eu/rest/v2/all')
-			.then((res) => {
-				const countriesToShow = res.data;
-				setCountries(countriesToShow);
-				setIsLoading(false);
-				setError(null);
-			})
-			.catch((err) => {
-				setIsLoading(false);
-				setError(err.message);
-			});
-	}, []);
+		if (filterTerm) {
+			axios
+				.get('https://restcountries.eu/rest/v2/region/' + filterTerm)
+				.then((res) => {
+					const countriesToShow = res.data;
+					setCountries(countriesToShow);
+					setIsLoading(false);
+					setError(null);
+				})
+				.catch((err) => {
+					setIsLoading(false);
+					setError(err.message);
+				});
+		} else {
+			axios
+				.get('https://restcountries.eu/rest/v2/all')
+				.then((res) => {
+					const countriesToShow = res.data;
+					setCountries(countriesToShow);
+					setIsLoading(false);
+					setError(null);
+				})
+				.catch((err) => {
+					setIsLoading(false);
+					setError(err.message);
+				});
+		}
+	}, [filterTerm]);
+
+	useEffect(() => {
+		if (searchTerm) {
+			axios
+				.get('https://restcountries.eu/rest/v2/name/' + searchTerm)
+				.then((res) => {
+					const countriesToShow = res.data;
+					setCountries(countriesToShow);
+					setIsLoading(false);
+					setError(null);
+				})
+				.catch((err) => {
+					setCountries(null);
+					setIsLoading(false);
+					setError('Cannot find the specified country');
+				});
+		} else {
+			axios
+				.get('https://restcountries.eu/rest/v2/all')
+				.then((res) => {
+					const countriesToShow = res.data;
+					setCountries(countriesToShow);
+					setIsLoading(false);
+					setError(null);
+				})
+				.catch((err) => {
+					setIsLoading(false);
+					setError(err.message);
+				});
+		}
+	}, [searchTerm]);
 
 	return (
 		<div className="Dashboard">
@@ -34,6 +84,7 @@ const Dashboard = () => {
 							<input
 								type="text"
 								placeholder="Search for a country..."
+								onChange={(e) => setSearchTerm(e.target.value)}
 							/>
 						</div>
 					</div>
@@ -45,11 +96,19 @@ const Dashboard = () => {
 							</div>
 						</button>
 						<div className="dropdown-content">
-							<Link to={`/africa`}>Africa</Link>
-							<Link to={`/americas`}>Americas</Link>
-							<Link to={`/asia`}>Asia</Link>
-							<Link to={`/europe`}>Europe</Link>
-							<Link to={`/oceania`}>Oceania</Link>
+							<a onClick={() => setFilterTerm('africa')}>
+								Africa
+							</a>
+							<a onClick={() => setFilterTerm('americas')}>
+								Americas
+							</a>
+							<a onClick={() => setFilterTerm('asia')}>Asia</a>
+							<a onClick={() => setFilterTerm('europe')}>
+								Europe
+							</a>
+							<a onClick={() => setFilterTerm('oceania')}>
+								Oceania
+							</a>
 						</div>
 					</div>
 				</div>

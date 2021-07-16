@@ -2,6 +2,8 @@
 	background-color: hsl(0, 0%, 100%);
 	box-shadow: 1px 1px 10px #ddd;
 	border-radius: 10px;
+	width: 270px;
+	margin: 0 0 50px;
 }
 
 .card-image {
