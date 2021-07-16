@@ -1,6 +1,8 @@
 import './navbar-styles.css';
 
 const Navbar = () => {
+	const clickHandler = () => {};
+
 	return (
 		<div className="Navbar">
 			<div className="navbar-wrapper">
@@ -9,7 +11,7 @@ const Navbar = () => {
 					<span>
 						<i class="fas fa-moon fa-md"></i>
 					</span>
-					<p>Dark mode</p>
+					<p onClick={clickHandler}>Dark mode</p>
 				</div>
 			</div>
 		</div>

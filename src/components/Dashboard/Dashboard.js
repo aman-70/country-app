@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import './dashboard-styles.css';
 import axios from 'axios';
 import Card from '../Card/Card';
-import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
 	const [countries, setCountries] = useState(null);

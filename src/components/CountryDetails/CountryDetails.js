@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const CountryDetails = () => {
-	let publicFolder = process.env.PUBLIC_URL;
+	// let publicFolder = process.env.PUBLIC_URL;
 	const { id } = useParams();
 
 	const [country, setCountry] = useState(null);
@@ -90,7 +90,9 @@ const CountryDetails = () => {
 									</p>
 									<p>
 										<span>Sub region: </span>
-										{country.subregion}
+										{country.subregion
+											? country.subregion
+											: 'N/A'}
 									</p>
 									<p>
 										<span>Capital: </span>
@@ -102,17 +104,17 @@ const CountryDetails = () => {
 										Border countries:
 									</div>
 									<div className="border-countries-names">
-										{borderCountries ? (
-											borderCountries.map((country) => (
-												<Link
-													to={`/details/${country.alpha3Code}`}
-												>
-													<div>{country.name}</div>
-												</Link>
-											))
-										) : (
-											<span>N/A</span>
-										)}
+										{borderCountries.length
+											? borderCountries.map((country) => (
+													<Link
+														to={`/details/${country.alpha3Code}`}
+													>
+														<div>
+															{country.name}
+														</div>
+													</Link>
+											  ))
+											: 'N/A'}
 									</div>
 								</div>
 							</div>
