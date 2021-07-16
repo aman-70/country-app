@@ -1,31 +1,34 @@
 import './card-styles.css';
+import { Link } from 'react-router-dom';
 
-const Card = () => {
+const Card = (props) => {
 	let publicFolder = process.env.PUBLIC_URL;
+	const { country } = props;
 
 	return (
-		<div className="Card">
-			<div
-				className="card-image"
-				style={{
-					backgroundImage: `url("${publicFolder}/images/india-flag.png")`
-				}}
-			>
-				{/* <img src={`${publicFolder}/images/india-flag.png`} alt="" /> */}
+		<div className="Card" id={country.id}>
+			<div className="card-image">
+				<img src={country.flag} alt="" />
 			</div>
 			<div className="card-body">
-				<div className="card-heading">
-					<h3>Germany</h3>
+				<div>
+					<Link
+						to={`/details/${country.alpha3Code}`}
+						className="card-heading"
+					>
+						<h3>{country.name}</h3>
+					</Link>
 				</div>
 				<div className="card-text">
 					<p>
-						<span>Population:</span> 81,770,900
+						<span>Population:</span> {country.population}
 					</p>
 					<p>
-						<span>Region:</span> Europe
+						<span>Region:</span> {country.region}
 					</p>
 					<p>
-						<span>Capital:</span> Berlin
+						<span>Capital:</span>{' '}
+						{country.capital ? country.capital : 'N/A'}
 					</p>
 				</div>
 			</div>

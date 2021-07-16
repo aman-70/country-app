@@ -1,5 +1,6 @@
 .Navbar {
 	background-color: hsl(0, 0%, 100%);
+	box-shadow: 1px 0px 5px hsl(0, 0%, 80%);
 }
 
 .navbar-wrapper {

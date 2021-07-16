@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
-import './dashboard-styles.css';
+import './filterdashboard-styles.css';
 import axios from 'axios';
 import Card from '../Card/Card';
 import { Link, useParams } from 'react-router-dom';
 
-const Dashboard = () => {
-	const [countries, setCountries] = useState(null);
+const FilterDashboard = () => {
+	const [filterCountries, setFilterCountries] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 
+	const { region } = useParams();
+
 	useEffect(() => {
 		axios
-			.get('https://restcountries.eu/rest/v2/all')
+			.get('https://restcountries.eu/rest/v2/region/' + region)
 			.then((res) => {
-				const countriesToShow = res.data;
-				setCountries(countriesToShow);
+				const filterCountriesToShow = res.data;
+				setFilterCountries(filterCountriesToShow);
+
 				setIsLoading(false);
 				setError(null);
 			})
@@ -22,10 +25,10 @@ const Dashboard = () => {
 				setIsLoading(false);
 				setError(err.message);
 			});
-	}, []);
+	});
 
 	return (
-		<div className="Dashboard">
+		<div className="FilterDashboard">
 			<div className="dashboard-wrapper">
 				<div className="find-countries">
 					<div className="search-box">
@@ -56,12 +59,14 @@ const Dashboard = () => {
 				<div className="gallery">
 					{error && <div>{error}</div>}
 					{isLoading && <div>Loading...</div>}
-					{countries &&
-						countries.map((country) => <Card country={country} />)}
+					{filterCountries &&
+						filterCountries.map((country) => (
+							<Card country={country} />
+						))}
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Dashboard;
+export default FilterDashboard;
