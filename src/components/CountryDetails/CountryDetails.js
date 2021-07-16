@@ -11,19 +11,37 @@ const CountryDetails = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(false);
 
+	const [borderCodes, setBorderCodes] = useState(null);
+	const [borderCountries, setBorderCountries] = useState([]);
+
 	useEffect(() => {
 		axios
 			.get('https://restcountries.eu/rest/v2/alpha?codes=' + id)
 			.then((res) => {
+				setBorderCountries([]);
 				setCountry(res.data[0]);
 				setIsLoading(false);
+
+				setBorderCodes(res.data[0].borders);
 			})
 			.catch((err) => {
 				setError(err.message);
 				setIsLoading(false);
 				console.log(err);
 			});
-	}, []);
+	}, [id]);
+
+	useEffect(() => {
+		if (borderCodes) {
+			borderCodes.map((code) =>
+				axios
+					.get('https://restcountries.eu/rest/v2/alpha/' + code)
+					.then((res) => {
+						setBorderCountries((prevArr) => [...prevArr, res.data]);
+					})
+			);
+		}
+	}, [borderCodes]);
 
 	return (
 		<div className="CountryDetails">
@@ -84,18 +102,13 @@ const CountryDetails = () => {
 										Border countries:
 									</div>
 									<div className="border-countries-names">
-										{/* {country.borders.map((border) =>
-											axios
-												.get(
-													'https://restcountries.eu/rest/v2/alpha?codes=' +
-														border
-												)
-												.then(<div>{border.name}</div>)
-										)} */}
-
-										{country.borders.length ? (
-											country.borders.map((country) => (
-												<div>{country}</div>
+										{borderCountries ? (
+											borderCountries.map((country) => (
+												<Link
+													to={`/details/${country.alpha3Code}`}
+												>
+													<div>{country.name}</div>
+												</Link>
 											))
 										) : (
 											<span>N/A</span>
