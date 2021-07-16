@@ -78,14 +78,12 @@ const Dashboard = () => {
 			<div className="dashboard-wrapper">
 				<div className="find-countries">
 					<div className="search-box">
-						<div>
-							<i class="fas fa-search"></i>
-							<input
-								type="text"
-								placeholder="Search for a country..."
-								onChange={(e) => setSearchTerm(e.target.value)}
-							/>
-						</div>
+						<i class="fas fa-search"></i>
+						<input
+							type="text"
+							placeholder="Search for a country..."
+							onChange={(e) => setSearchTerm(e.target.value)}
+						/>
 					</div>
 					<div className="dropdown">
 						<button className="dropbtn">

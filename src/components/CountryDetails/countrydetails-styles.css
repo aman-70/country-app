@@ -34,8 +34,7 @@
 
 .country-card {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 3em;
+	grid-template-columns: 1fr;
 }
 
 .country-flag {
@@ -65,12 +64,12 @@
 
 .country-info {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	margin: 0 0 50px;
+	grid-template-columns: 1fr;
+	margin: 0 0 20px;
 }
 
 .country-info p {
-	margin: 0 0 5px;
+	margin: 0 0 10px;
 }
 
 .country-info p span {
@@ -84,12 +83,13 @@
 
 .border-countries {
 	display: grid;
-	grid-template-columns: 2fr 7fr;
+	grid-template-columns: 1fr;
 }
 
 .border-countries-heading {
 	align-self: center;
 	font-weight: 600;
+	margin: 0 0 20px;
 }
 
 .border-countries-names div {
@@ -105,3 +105,31 @@
 }
 
 /* Country card starts */
+
+/* Mobile view CSS starts */
+
+@media (min-width: 576px) {
+	.country-card {
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 3em;
+	}
+
+	.country-info {
+		grid-template-columns: 1fr 1fr;
+		margin: 0 0 50px;
+	}
+
+	.country-info p {
+		margin: 0 0 5px;
+	}
+
+	.border-countries {
+		grid-template-columns: 2fr 7fr;
+	}
+
+	.border-countries-heading {
+		margin: 0;
+	}
+}
+
+/* Mobile view CSS ends */

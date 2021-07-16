@@ -1,32 +1,33 @@
 .Dashboard {
 	background-color: hsl(0, 0%, 98%);
 	font-size: 14px;
+	overflow: hidden;
 }
 
 .dashboard-wrapper {
 	margin: 0 auto;
-	max-width: 85%;
+	max-width: 100%;
 	padding: 40px 0;
 }
 
 .find-countries {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
 	margin: 0 0 40px;
-	justify-content: space-between;
+	padding: 0 20px;
 }
 
 .search-box {
 	background-color: hsl(0, 0%, 100%);
 	border-radius: 5px;
 	padding: 16px 8px 16px 20px;
-	width: 40%;
+	width: 92%;
 	box-shadow: 1px 1px 5px #eee;
+	margin: 0 0 10px;
 }
 
 .search-box input {
-	margin-left: 15px;
+	margin-left: 10px;
 	font-size: 14px;
 	color: hsl(0, 0%, 52%);
 	border: none;
@@ -43,9 +44,8 @@ input:focus {
 
 .gallery {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: space-between;
 }
 
 /* Dropdown menu starts */
@@ -55,7 +55,7 @@ input:focus {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding: 16px 20px;
+	padding: 16px 24px;
 	border: none;
 	cursor: pointer;
 	width: 100%;
@@ -74,7 +74,7 @@ input:focus {
 	position: relative;
 	box-shadow: 1px 1px 5px #eee;
 	border-radius: 5px;
-	width: 14%;
+	width: 100%;
 }
 
 .dropdown-content {
@@ -112,5 +112,53 @@ input:focus {
 /* Dropdown menu ends */
 
 /* Mobile view CSS starts */
+
+@media (min-width: 576px) {
+	.dashboard-wrapper {
+		margin: 0 auto;
+		max-width: 85%;
+		padding: 40px 0;
+	}
+
+	.find-countries {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 0;
+	}
+
+	.search-box {
+		padding: 16px 8px 16px 20px;
+		width: 40%;
+		margin: 0 0 10px;
+	}
+
+	.search-box input {
+		margin-left: 15px;
+		font-size: 14px;
+		color: hsl(0, 0%, 52%);
+		border: none;
+		outline: none;
+		font-weight: 600;
+		font-family: 'Nunito Sans', sans-serif;
+		color: hsl(200, 15%, 8%);
+		width: 90%;
+	}
+
+	.dropbtn {
+		padding: 16px 24px;
+	}
+
+	.dropdown {
+		width: 15%;
+	}
+
+	.gallery {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+}
 
 /* Mobile view CSS ends */

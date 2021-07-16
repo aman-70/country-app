@@ -3,7 +3,7 @@
 	box-shadow: 1px 1px 10px #ddd;
 	border-radius: 10px;
 	width: 280px;
-	margin: 0 0 50px;
+	margin: 0 auto 50px;
 }
 
 .card-image {
@@ -43,3 +43,13 @@
 .card-text p span {
 	font-weight: 600;
 }
+
+/* Mobile view CSS starts */
+
+@media (min-width: 576px) {
+	.Card {
+		margin: 0 0 50px;
+	}
+}
+
+/* Mobile view CSS ends */
