@@ -1,4 +1,5 @@
 import './navbar-styles.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 	const clickHandler = () => {};
@@ -6,7 +7,7 @@ const Navbar = () => {
 	return (
 		<div className="Navbar">
 			<div className="navbar-wrapper">
-				<h2 className="navbar-heading">Where in the world?</h2>
+				<Link to="/" className="navbar-heading"><h2>Where in the world?</h2></Link>
 				<div className="dark-mode">
 					<span>
 						<i class="fas fa-moon fa-md"></i>

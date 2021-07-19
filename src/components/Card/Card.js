@@ -2,11 +2,10 @@ import './card-styles.css';
 import { Link } from 'react-router-dom';
 
 const Card = (props) => {
-	let publicFolder = process.env.PUBLIC_URL;
 	const { country } = props;
 
 	return (
-		<div className="Card" id={country.id}>
+		<div className="Card" id={country.numericCode}>
 			<div className="card-image">
 				<img src={country.flag} alt="" />
 			</div>

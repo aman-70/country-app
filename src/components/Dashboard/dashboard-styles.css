@@ -89,8 +89,7 @@ input:focus {
 	background-color: hsl(0, 0%, 100%);
 }
 
-.dropdown-content a {
-	color: black;
+.dropdown-content p {
 	padding: 8px 20px;
 	text-decoration: none;
 	display: block;
@@ -100,7 +99,7 @@ input:focus {
 	color: hsl(200, 15%, 8%);
 }
 
-.dropdown-content a:hover {
+.dropdown-content p:hover {
 	background-color: #f1f1f1;
 	cursor: pointer;
 }
@@ -130,7 +129,6 @@ input:focus {
 	.search-box {
 		padding: 16px 8px 16px 20px;
 		width: 40%;
-		margin: 0 0 10px;
 	}
 
 	.search-box input {
@@ -146,11 +144,12 @@ input:focus {
 	}
 
 	.dropbtn {
-		padding: 16px 24px;
+		padding: 18px 24px;
 	}
 
 	.dropdown {
 		width: 15%;
+		height: fit-content;
 	}
 
 	.gallery {

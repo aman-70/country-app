@@ -93,19 +93,19 @@ const Dashboard = () => {
 							</div>
 						</button>
 						<div className="dropdown-content">
-							<a onClick={() => setFilterTerm('africa')}>
+							<p onClick={() => setFilterTerm('africa')}>
 								Africa
-							</a>
-							<a onClick={() => setFilterTerm('americas')}>
+							</p>
+							<p onClick={() => setFilterTerm('americas')}>
 								Americas
-							</a>
-							<a onClick={() => setFilterTerm('asia')}>Asia</a>
-							<a onClick={() => setFilterTerm('europe')}>
+							</p>
+							<p onClick={() => setFilterTerm('asia')}>Asia</p>
+							<p onClick={() => setFilterTerm('europe')}>
 								Europe
-							</a>
-							<a onClick={() => setFilterTerm('oceania')}>
+							</p>
+							<p onClick={() => setFilterTerm('oceania')}>
 								Oceania
-							</a>
+							</p>
 						</div>
 					</div>
 				</div>
