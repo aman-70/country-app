@@ -1,5 +1,4 @@
 import './css/style.css';
-import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './components/Dashboard/Dashboard';
 import CountryDetails from './components/CountryDetails/CountryDetails';
@@ -11,12 +10,10 @@ const App = () => {
 			<main className="App">
 				<div className="container">
 					<Navbar />
-					<Suspense fallback={<div>Loading now...</div>}>
-						<Switch>
-							<Route exact path="/" component={Dashboard} />
-							<Route path="/details/:id" component={CountryDetails} />
-						</Switch>
-					</Suspense>
+					<Switch>
+						<Route exact path="/" component={Dashboard} />
+						<Route path="/details/:id" component={CountryDetails} />
+					</Switch>
 				</div>
 			</main>
 		</Router>

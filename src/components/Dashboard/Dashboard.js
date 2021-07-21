@@ -77,7 +77,7 @@ const Dashboard = () => {
 			<div className="dashboard-wrapper">
 				<section className="find-countries">
 					<div className="search-box">
-						<i class="fas fa-search"></i>
+						<i className="fas fa-search"></i>
 						<input
 							type="text"
 							placeholder="Search for a country..."
@@ -88,7 +88,7 @@ const Dashboard = () => {
 						<button className="dropbtn">
 							<p>Filter by Region</p>
 							<div>
-								<i class="fas fa-chevron-down"></i>
+								<i className="fas fa-chevron-down"></i>
 							</div>
 						</button>
 						<div className="dropdown-content">
@@ -112,7 +112,7 @@ const Dashboard = () => {
 					{error && <div>{error}</div>}
 					{isLoading && <div>Loading...</div>}
 					{countries &&
-						countries.map((country) => <Card country={country} />)}
+						countries.map((country) => <Card country={country} key={country.numericCode} />)}
 				</section>
 			</div>
 		</main>

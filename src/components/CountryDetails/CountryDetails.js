@@ -7,7 +7,7 @@ const CountryDetails = () => {
 
 	const [country, setCountry] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState(false);
+	const [error, setError] = useState(null);
 
 	const [borderCodes, setBorderCodes] = useState(null);
 	const [borderCountries, setBorderCountries] = useState([]);
@@ -50,6 +50,7 @@ const CountryDetails = () => {
 						Back
 					</button>
 				</Link>
+				{error && <div>{error}</div>}
 				{isLoading && <div>Country details loading...</div>}
 				{country && (
 					<section className="country-card">
