@@ -1,3 +1,5 @@
+/***** Dashboard styles start *****/
+
 .Dashboard {
 	background-color: hsl(0, 0%, 98%);
 	font-size: 14px;
@@ -24,28 +26,22 @@
 	width: 92%;
 	box-shadow: 1px 1px 5px #eee;
 	margin: 0 0 10px;
-}
 
-.search-box input {
-	margin-left: 10px;
-	font-size: 14px;
-	color: hsl(0, 0%, 52%);
-	border: none;
-	outline: none;
-	font-weight: 600;
-	font-family: 'Nunito Sans', sans-serif;
-	color: hsl(200, 15%, 8%);
-	width: 90%;
-}
+    input {
+        margin-left: 10px;
+        font-size: 14px;
+        color: hsl(0, 0%, 52%);
+        border: none;
+        outline: none;
+        font-weight: 600;
+        font-family: 'Nunito Sans', sans-serif;
+        color: hsl(200, 15%, 8%);
+        width: 90%;
 
-input:focus {
-	outline: none;
-}
-
-.gallery {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
+        &:focus {
+            outline: none;
+        }
+    }
 }
 
 /* Dropdown menu starts */
@@ -64,17 +60,21 @@ input:focus {
 	font-weight: 600;
 	font-family: 'Nunito Sans', sans-serif;
 	color: hsl(200, 15%, 8%);
-}
 
-.dropbtn p {
-	margin: 0 10px 0 0;
-}
+    p {
+        margin: 0 10px 0 0;
+    }
+} 
 
 .dropdown {
 	position: relative;
 	box-shadow: 1px 1px 5px #eee;
 	border-radius: 5px;
 	width: 100%;
+
+    &:hover .dropdown-content {
+        display: block;
+    }
 }
 
 .dropdown-content {
@@ -87,30 +87,36 @@ input:focus {
 	z-index: 1;
 	border-radius: 5px;
 	background-color: hsl(0, 0%, 100%);
-}
 
-.dropdown-content p {
-	padding: 8px 20px;
-	text-decoration: none;
-	display: block;
-	font-size: 14px;
-	font-weight: 600;
-	font-family: 'Nunito Sans', sans-serif;
-	color: hsl(200, 15%, 8%);
-}
+    p {
+        padding: 8px 20px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Nunito Sans', sans-serif;
+        color: hsl(200, 15%, 8%);
 
-.dropdown-content p:hover {
-	background-color: #f1f1f1;
-	cursor: pointer;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
+        &:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+    }
 }
 
 /* Dropdown menu ends */
 
-/* Mobile view CSS starts */
+/* Gallery starts */
+
+.gallery {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+/* Gallery ends */
+
+/* Dashboard mobile starts */
 
 @media (min-width: 576px) {
 	.dashboard-wrapper {
@@ -129,18 +135,18 @@ input:focus {
 	.search-box {
 		padding: 16px 8px 16px 20px;
 		width: 40%;
-	}
 
-	.search-box input {
-		margin-left: 15px;
-		font-size: 14px;
-		color: hsl(0, 0%, 52%);
-		border: none;
-		outline: none;
-		font-weight: 600;
-		font-family: 'Nunito Sans', sans-serif;
-		color: hsl(200, 15%, 8%);
-		width: 90%;
+        input {
+            margin-left: 15px;
+            font-size: 14px;
+            color: hsl(0, 0%, 52%);
+            border: none;
+            outline: none;
+            font-weight: 600;
+            font-family: 'Nunito Sans', sans-serif;
+            color: hsl(200, 15%, 8%);
+            width: 90%;
+        }
 	}
 
 	.dropbtn {
@@ -160,4 +166,6 @@ input:focus {
 	}
 }
 
-/* Mobile view CSS ends */
+/* Dashboard mobile ends */
+
+/***** Dashboard styles end *****/

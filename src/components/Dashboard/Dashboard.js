@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import './dashboard-styles.css';
 import axios from 'axios';
 import Card from '../Card/Card';
 
@@ -111,7 +110,7 @@ const Dashboard = () => {
 				</section>
 				<section className="gallery">
 					{error && <div>{error}</div>}
-					{/* {isLoading && <div>Loading...</div>} */}
+					{isLoading && <div>Loading...</div>}
 					{countries &&
 						countries.map((country) => <Card country={country} />)}
 				</section>

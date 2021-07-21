@@ -1,4 +1,3 @@
-import './countrydetails-styles.css';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
