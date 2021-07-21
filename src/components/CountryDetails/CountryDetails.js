@@ -4,7 +4,6 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const CountryDetails = () => {
-	// let publicFolder = process.env.PUBLIC_URL;
 	const { id } = useParams();
 
 	const [country, setCountry] = useState(null);
@@ -44,7 +43,7 @@ const CountryDetails = () => {
 	}, [borderCodes]);
 
 	return (
-		<div className="CountryDetails">
+		<main className="CountryDetails">
 			<div className="countrydetails-wrapper">
 				<Link to="/">
 					<button className="back-btn">
@@ -54,14 +53,14 @@ const CountryDetails = () => {
 				</Link>
 				{isLoading && <div>Country details loading...</div>}
 				{country && (
-					<div className="country-card">
-						<div className="country-flag">
+					<section className="country-card">
+						<figure className="country-flag">
 							<img src={country.flag} alt="" />
-						</div>
-						<div className="country-text">
+						</figure>
+						<article className="country-text">
 							<h2 className="country-name">{country.name}</h2>
 							<div>
-								<div className="country-info">
+								<section className="country-info">
 									<p>
 										<span>Native Name: </span>
 										{country.nativeName}
@@ -98,8 +97,8 @@ const CountryDetails = () => {
 										<span>Capital: </span>
 										{country.capital}
 									</p>
-								</div>
-								<div className="border-countries">
+								</section>
+								<section className="border-countries">
 									<div className="border-countries-heading">
 										Border countries:
 									</div>
@@ -116,13 +115,13 @@ const CountryDetails = () => {
 											  ))
 											: 'N/A'}
 									</div>
-								</div>
+								</section>
 							</div>
-						</div>
-					</div>
+						</article>
+					</section>
 				)}
 			</div>
-		</div>
+		</main>
 	);
 };
 

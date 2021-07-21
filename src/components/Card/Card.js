@@ -7,18 +7,16 @@ const Card = (props) => {
 	const { country } = props;
 
 	return (
-		<div className="Card" id={country.numericCode}>
+		<main className="Card" id={country.numericCode}>
 			<Link
 				to={`/details/${country.alpha3Code}`}
 				className="card-link"
 			>
-				<div className="card-image">
+				<figure className="card-image">
 					<LazyLoadImage effect="blur" src={country.flag} alt={`${country.name}`+ " flag"} />
-				</div>
-				<div className="card-body">
-					<div>
-						<h3 className="card-heading">{country.name}</h3>
-					</div>
+				</figure>
+				<article className="card-body">
+					<h3 className="card-heading">{country.name}</h3>
 					<div className="card-text">
 						<p>
 							<span>Population:</span> {country.population}
@@ -31,9 +29,9 @@ const Card = (props) => {
 							{country.capital ? country.capital : 'N/A'}
 						</p>
 					</div>
-				</div>
+				</article>
 			</Link>
-		</div>
+		</main>
 	);
 };
 

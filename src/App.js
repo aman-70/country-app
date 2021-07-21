@@ -1,24 +1,26 @@
-import Dashboard from './components/Dashboard/Dashboard';
+import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar/Navbar';
-import CountryDetails from './components/CountryDetails/CountryDetails';
+// import Dashboard from './components/Dashboard/Dashboard';
+// import CountryDetails from './components/CountryDetails/CountryDetails';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+const Dashboard = lazy(() => import("./components/Dashboard/Dashboard"));
+const CountryDetails = lazy(() => import("./components/CountryDetails/CountryDetails"));
 
 const App = () => {
 	return (
 		<Router>
-			<div className="App">
+			<main className="App">
 				<div className="container">
 					<Navbar />
-					<Switch>
-						<Route exact path="/">
-							<Dashboard />
-						</Route>
-						<Route path="/details/:id">
-							<CountryDetails />
-						</Route>
-					</Switch>
+					<Suspense fallback={<div>Loading now...</div>}>
+						<Switch>
+							<Route exact path="/" component={Dashboard} />
+							<Route path="/details/:id" component={CountryDetails} />
+						</Switch>
+					</Suspense>
 				</div>
-			</div>
+			</main>
 		</Router>
 	);
 };

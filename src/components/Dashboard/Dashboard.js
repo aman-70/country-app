@@ -74,9 +74,9 @@ const Dashboard = () => {
 	}, [searchTerm]);
 
 	return (
-		<div className="Dashboard">
+		<main className="Dashboard">
 			<div className="dashboard-wrapper">
-				<div className="find-countries">
+				<section className="find-countries">
 					<div className="search-box">
 						<i class="fas fa-search"></i>
 						<input
@@ -108,15 +108,15 @@ const Dashboard = () => {
 							</p>
 						</div>
 					</div>
-				</div>
-				<div className="gallery">
+				</section>
+				<section className="gallery">
 					{error && <div>{error}</div>}
-					{isLoading && <div>Loading...</div>}
+					{/* {isLoading && <div>Loading...</div>} */}
 					{countries &&
 						countries.map((country) => <Card country={country} />)}
-				</div>
+				</section>
 			</div>
-		</div>
+		</main>
 	);
 };
 
