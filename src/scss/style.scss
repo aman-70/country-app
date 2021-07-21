@@ -1,4 +1,41 @@
+/* Theme colour styles */
+@import './theme';
+
+/* Component styles */
 @import '../components/Navbar/navbar-styles';
 @import '../components/Dashboard/dashboard-styles';
 @import '../components/Card/card-styles';
-@import '../components/CountryDetails/countrydetails-styles'
+@import '../components/CountryDetails/countrydetails-styles';
+
+/* CSS to extend the page till bottom */
+
+html, body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.App {
+    height: 100%;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+.Dashboard {
+    flex-grow: 1;
+    overflow: auto;
+
+    .dashboard-wrapper {
+        height: 100%;
+    }
+}
+
+.CountryDetails {
+    height: 100%;
+}

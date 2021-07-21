@@ -46,7 +46,7 @@ const CountryDetails = () => {
 			<div className="countrydetails-wrapper">
 				<Link to="/">
 					<button className="back-btn">
-						<i class="fas fa-long-arrow-alt-left"></i>
+						<i className="fas fa-long-arrow-alt-left"></i>
 						Back
 					</button>
 				</Link>
@@ -84,7 +84,7 @@ const CountryDetails = () => {
 									<p>
 										<span>Languages: </span>
 										{country.languages.map((language) => (
-											<p>{language.name}</p>
+											language.name
 										))}
 									</p>
 									<p>
@@ -106,7 +106,7 @@ const CountryDetails = () => {
 										{borderCountries.length
 											? borderCountries.map((country) => (
 													<Link
-														to={`/details/${country.alpha3Code}`}
+														to={`/details/${country.alpha3Code}`} key={Math.random()}
 													>
 														<div>
 															{country.name}

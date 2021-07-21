@@ -1,7 +1,8 @@
 /***** Dashboard styles start *****/
 
 .Dashboard {
-	background-color: hsl(0, 0%, 98%);
+	background-color: var(--bg-color);
+	color: var(--text-color);
 	font-size: 14px;
 	overflow: hidden;
 }
@@ -20,26 +21,28 @@
 }
 
 .search-box {
-	background-color: hsl(0, 0%, 100%);
+	background-color: var(--element-color);
+	color: var(--input-color);
 	border-radius: 5px;
 	padding: 16px 8px 16px 20px;
 	width: 92%;
-	box-shadow: 1px 1px 5px #eee;
+	box-shadow: 1px 1px 5px var(--shadow-color);
 	margin: 0 0 10px;
 
     input {
         margin-left: 10px;
         font-size: 14px;
-        color: hsl(0, 0%, 52%);
+		background-color: var(--element-color);
+        color: var(--input-color);
         border: none;
         outline: none;
         font-weight: 600;
         font-family: 'Nunito Sans', sans-serif;
-        color: hsl(200, 15%, 8%);
         width: 90%;
 
         &:focus {
             outline: none;
+			color: var(--input-color);
         }
     }
 }
@@ -47,28 +50,29 @@
 /* Dropdown menu starts */
 
 .dropbtn {
-	background-color: hsl(0, 0%, 100%);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	padding: 16px 24px;
-	border: none;
-	cursor: pointer;
 	width: 100%;
-	border-radius: 5px;
-	text-align: left;
+	background-color: var(--element-color);
+	color: var(--text-color);
 	font-weight: 600;
 	font-family: 'Nunito Sans', sans-serif;
-	color: hsl(200, 15%, 8%);
+	text-align: left;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
 
     p {
         margin: 0 10px 0 0;
+		color: var(--text-color);
     }
 } 
 
 .dropdown {
 	position: relative;
-	box-shadow: 1px 1px 5px #eee;
+	box-shadow: 1px 1px 5px var(--shadow-color);
 	border-radius: 5px;
 	width: 100%;
 
@@ -82,11 +86,10 @@
 	display: none;
 	position: absolute;
 	min-width: 100%;
-	background-color: #f9f9f9;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	background-color: var(--element-color);
+	box-shadow: 0px 8px 16px 0px var(--shadow-color);
 	z-index: 1;
 	border-radius: 5px;
-	background-color: hsl(0, 0%, 100%);
 
     p {
         padding: 8px 20px;
@@ -95,10 +98,11 @@
         font-size: 14px;
         font-weight: 600;
         font-family: 'Nunito Sans', sans-serif;
-        color: hsl(200, 15%, 8%);
+        color: var(--text-color);
 
         &:hover {
-            background-color: #f1f1f1;
+            background-color: var(--text-color);
+			color: var(--element-color);
             cursor: pointer;
         }
     }
@@ -139,13 +143,8 @@
         input {
             margin-left: 15px;
             font-size: 14px;
-            color: hsl(0, 0%, 52%);
-            border: none;
-            outline: none;
-            font-weight: 600;
-            font-family: 'Nunito Sans', sans-serif;
-            color: hsl(200, 15%, 8%);
             width: 90%;
+			color: var(--text-color);
         }
 	}
 

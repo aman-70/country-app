@@ -1,22 +1,22 @@
 /***** Card styles start *****/
 
 .Card {
-	background-color: hsl(0, 0%, 100%);
-	box-shadow: 1px 1px 10px #ddd;
+	background-color: var(--element-color);
+	box-shadow: 1px 1px 10px var(--shadow-color);
 	border-radius: 10px;
 	width: 280px;
 	margin: 0 auto 50px;
 	color: hsl(200, 15%, 8%);
-	transition: 0.4s ease-out all;
+	transition: 0.3s ease-out all;
 
     &:hover {
-        box-shadow: 1px 1px 10px 1px #aaa;
+        box-shadow: 1px 1px 10px 1px var(--shadow-hover-color);
     }
 }
 
 .card-link {
 	text-decoration: none;
-	color: hsl(200, 15%, 8%);
+	color: var(--text-color);
 }
 
 .card-image {
@@ -42,7 +42,7 @@
 
 .card-heading {
 	margin: 0 0 10px;
-	color: hsl(200, 15%, 8%);
+	color: var(--text-color);
 }
 
 .card-text p {

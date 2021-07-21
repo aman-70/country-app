@@ -1,7 +1,8 @@
 /***** Navbar styles start *****/
 
 .Navbar {
-	background-color: hsl(0, 0%, 100%);
+	background-color: var(--element-color);
+	color: var(--text-color);
 	box-shadow: 1px 0px 5px hsl(0, 0%, 80%);
 	font-size: 12px;
 }
@@ -17,18 +18,28 @@
 }
 
 .navbar-heading {
+	display: inline-block;
 	text-decoration: none;
-	color: hsl(200, 15%, 8%);
+	color: var(--text-color);
 }
 
 .dark-mode {
-	display: grid;
-	grid-template-columns: 1fr 3fr;
 	justify-self: end;
 	align-self: center;
 
+	.fa-moon {
+		display: var(--dark-mode-icon);
+	}
+
+	.fa-sun {
+		display:  var(--light-mode-icon);
+	}
+
     p {
+		display: inline-block;
+		margin-left: 10px;
         font-weight: 600;
+		cursor: pointer;
     }
 }
 
@@ -40,8 +51,8 @@
 	}
 
 	.navbar-wrapper {
-		padding: 20px 0;
-		max-width: 85%;
+		padding: 20px 20px 20px 0;
+		max-width: 84%;
 	}
 }
 

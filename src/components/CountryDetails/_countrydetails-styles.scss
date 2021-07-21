@@ -4,7 +4,8 @@
 	padding: 60px 0;
 	font-family: 'Nunito Sans', sans-serif;
 	font-size: 16px;
-	color: hsl(200, 15%, 8%);
+	color: var(--text-color);
+	background-color: var(--bg-color);
 }
 
 .countrydetails-wrapper {
@@ -15,18 +16,24 @@
 
 /* Back button starts */
 .back-btn {
-	background-color: hsl(0, 0%, 100%);
+	background-color: var(--element-color);
+	color: var(--text-color);
 	padding: 12px 30px 10px;
-	box-shadow: 1px 1px 5px hsl(0, 0%, 80%);
+	box-shadow: 1px 1px 5px var(--shadow-color);
 	border-radius: 5px;
 	border: none;
 	outline: none;
 	margin: 0 0 70px;
 	cursor: pointer;
+	transition: 0.3s all ease-out;
 
     i {
         margin-right: 10px;
     }
+
+	&:hover {
+		box-shadow: 1px 1px 5px var(--shadow-hover-color);
+	}
 }
 /* Back button ends */
 
@@ -43,7 +50,7 @@
 	width: 90%;
 	height: 350px;
 	object-fit: cover;
-	box-shadow: 1px 1px 5px #ccc;
+	box-shadow: 1px 1px 5px var(--shadow-color);
 
     img {
         width: 100%;
@@ -91,15 +98,16 @@
 }
 
 .border-countries-names div {
+	background-color: var(--element-color);
 	display: inline-block;
 	text-align: center;
 	padding: 5px 15px;
 	margin: 0 15px 10px 0;
-	box-shadow: 1px 1px 5px hsl(0, 0%, 80%);
+	box-shadow: 1px 1px 5px var(--shadow-color);
 	border-radius: 5px;
 	font-size: 14px;
 	cursor: pointer;
-	color: hsl(200, 15%, 8%);
+	color: var(--text-color);
 }
 /* Country card ends */
 

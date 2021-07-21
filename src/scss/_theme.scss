@@ -1,0 +1,28 @@
+/* Themes start */
+
+.lightTheme {
+    --text-color: hsl(200, 15%, 8%);
+    --bg-color: hsl(0, 0%, 98%); 
+    --input-color: hsl(0, 0%, 52%);
+    --element-color: hsl(0, 0%, 100%);
+    --shadow-color: hsl(0, 0%, 93%);
+    --shadow-hover-color: hsl(0, 0%, 67%);
+
+    --dark-mode-icon: display;
+    --light-mode-icon: none;
+}
+
+.darkTheme {
+    --text-color: hsl(0, 0%, 100%);
+    --bg-color: hsl(207, 26%, 17%); 
+    --input-color: hsl(0, 0%, 100%);
+    --element-color: hsl(209, 23%, 22%);
+    --shadow-color: hsl(0, 0%, 20%);    
+    --shadow-hover-color: hsl(0, 0%, 35%);
+    
+    --dark-mode-icon: none;
+    --light-mode-icon: display;
+}
+
+/* Themes end */
+
