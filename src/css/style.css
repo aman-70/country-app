@@ -1,6 +1,6 @@
 /* Theme colour styles */
 /* Themes start */
-.lightTheme {
+.light {
   --text-color: hsl(200, 15%, 8%);
   --bg-color: hsl(0, 0%, 98%);
   --input-color: hsl(0, 0%, 52%);
@@ -11,7 +11,7 @@
   --light-mode-icon: none;
 }
 
-.darkTheme {
+.dark {
   --text-color: hsl(0, 0%, 100%);
   --bg-color: hsl(207, 26%, 17%);
   --input-color: hsl(0, 0%, 100%);
