@@ -23,6 +23,40 @@
 }
 
 /* Themes end */
+/* Basic utilities */
+/* Back button starts */
+.back-btn, .back-btn-error {
+  background-color: var(--element-color);
+  color: var(--text-color);
+  padding: 12px 30px 10px;
+  -webkit-box-shadow: 1px 1px 5px var(--shadow-color);
+          box-shadow: 1px 1px 5px var(--shadow-color);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s all ease-out;
+  transition: 0.3s all ease-out;
+}
+
+.back-btn i, .back-btn-error i {
+  margin-right: 10px;
+}
+
+.back-btn:hover, .back-btn-error:hover {
+  -webkit-box-shadow: 1px 1px 5px var(--shadow-hover-color);
+          box-shadow: 1px 1px 5px var(--shadow-hover-color);
+}
+
+.back-btn {
+  margin: 0 0 50px;
+}
+
+.back-btn-error {
+  margin: 0 0 50px;
+}
+
+/* Back button ends */
 /* Component styles */
 /***** Navbar styles start *****/
 .Navbar {
@@ -370,32 +404,10 @@
   padding: 10px 0 80px;
 }
 
-/* Back button starts */
-.back-btn {
-  background-color: var(--element-color);
-  color: var(--text-color);
-  padding: 12px 30px 10px;
-  -webkit-box-shadow: 1px 1px 5px var(--shadow-color);
-          box-shadow: 1px 1px 5px var(--shadow-color);
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  margin: 0 0 70px;
-  cursor: pointer;
-  -webkit-transition: 0.3s all ease-out;
-  transition: 0.3s all ease-out;
+.countrydetails-error h1 {
+  margin-bottom: 10px;
 }
 
-.back-btn i {
-  margin-right: 10px;
-}
-
-.back-btn:hover {
-  -webkit-box-shadow: 1px 1px 5px var(--shadow-hover-color);
-          box-shadow: 1px 1px 5px var(--shadow-hover-color);
-}
-
-/* Back button ends */
 /* Country card starts */
 .country-card {
   display: -ms-grid;
@@ -508,6 +520,37 @@
 
 /* Country details mobile ends */
 /***** Country details styles end *****/
+.Error404Page {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.error404page-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.error404page-wrapper h1 {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 576px) {
+  .error404page-wrapper {
+    margin: 0 auto;
+    width: 85%;
+    padding: 60px 0;
+  }
+  .error404page-wrapper h1 {
+    margin-bottom: 10px;
+  }
+  .error404page-wrapper p {
+    font-size: 16px;
+  }
+}
+
 /* CSS to extend the page till bottom */
 html, body {
   height: 100%;
@@ -544,6 +587,10 @@ html, body {
 }
 
 .CountryDetails {
+  height: 100%;
+}
+
+.Error404Page {
   height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

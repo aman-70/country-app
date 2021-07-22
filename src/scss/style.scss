@@ -1,11 +1,15 @@
 /* Theme colour styles */
 @import './theme';
 
+/* Basic utilities */
+@import './buttons';
+
 /* Component styles */
 @import '../components/Navbar/navbar-styles';
 @import '../components/Dashboard/dashboard-styles';
 @import '../components/Card/card-styles';
 @import '../components/CountryDetails/countrydetails-styles';
+@import '../components/Error404/error404page-styles';
 
 /* CSS to extend the page till bottom */
 
@@ -37,5 +41,9 @@ html, body {
 }
 
 .CountryDetails {
+    height: 100%;
+}
+
+.Error404Page {
     height: 100%;
 }

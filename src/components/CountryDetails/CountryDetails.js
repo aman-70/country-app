@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Redirect, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const CountryDetails = () => {
@@ -50,7 +50,10 @@ const CountryDetails = () => {
 						Back
 					</button>
 				</Link>
-				{error && <div>{error}</div>}
+				{error && (<div className="countrydetails-error">
+								<h1>404 Error</h1>
+								<p>Oopsie! Requested page not found.</p>
+							</div>)}
 				{isLoading && <div>Country details loading...</div>}
 				{country && (
 					<section className="country-card">
