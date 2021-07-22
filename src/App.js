@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Dashboard from './components/Dashboard/Dashboard';
 import CountryDetails from './components/CountryDetails/CountryDetails';
 import Error404Page from './components/Error404/Error404Page';	
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
 	// const [theme, setTheme] = useState(null);

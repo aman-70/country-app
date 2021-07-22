@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Link, Redirect, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const CountryDetails = () => {
