@@ -6,17 +6,17 @@ const Card = (props) => {
 	const { country } = props;
 
 	return (
-		<main className="Card">
+		<main className="Card" data-testid="card">
 			<Link
 				to={`/details/${country.alpha3Code}`}
 				className="card-link"
 			>
-				<figure className="card-image">
+				<figure className="card-image" data-testid="card-image">
 					<LazyLoadImage effect="blur" src={country.flag} alt={`${country.name} 'flag`} />
 				</figure>
-				<article className="card-body">
+				<article className="card-body" data-testid="card-body">
 					<h3 className="card-heading">{country.name}</h3>
-					<div className="card-text">
+					<div className="card-text" data-testid="card-text">
 						<p>
 							<span>Population:</span> {country.population}
 						</p>

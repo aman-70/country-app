@@ -82,16 +82,17 @@ const Dashboard = () => {
 							type="text"
 							placeholder="Search for a country..."
 							onChange={(e) => setSearchTerm(e.target.value)}
+							data-testid="search"
 						/>
 					</div>
 					<div className="dropdown">
-						<button className="dropbtn">
+						<button className="dropbtn" data-testid="filter">
 							<p>Filter by Region</p>
 							<div>
 								<i className="fas fa-chevron-down"></i>
 							</div>
 						</button>
-						<div className="dropdown-content">
+						<div className="dropdown-content" data-testid="filter-options">
 							<p onClick={() => setFilterTerm('africa')}>
 								Africa
 							</p>
@@ -109,8 +110,8 @@ const Dashboard = () => {
 					</div>
 				</section>
 				<section className="gallery">
-					{error && <div>{error}</div>}
-					{isLoading && <div>Loading...</div>}
+					{error && <div data-testid="error">{error}</div>}
+					{isLoading && <div data-testid="loading">Loading...</div>}
 					{countries &&
 						countries.map((country) => <Card country={country} key={country.numericCode} />)}
 				</section>

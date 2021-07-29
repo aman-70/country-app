@@ -45,23 +45,23 @@ const CountryDetails = () => {
 		<main className="CountryDetails">
 			<div className="countrydetails-wrapper">
 				<Link to="/">
-					<button className="back-btn">
+					<button className="back-btn" data-testid="back-btn">
 						<i className="fas fa-long-arrow-alt-left"></i>
 						Back
 					</button>
 				</Link>
-				{error && (<div className="countrydetails-error">
+				{error && (<div className="countrydetails-error" data-testid="error">
 								<h1>404 Error</h1>
 								<p>Oopsie! Requested page not found.</p>
 							</div>)}
-				{isLoading && <div>Country details loading...</div>}
+				{isLoading && <div data-testid="loading">Country details loading...</div>}
 				{country && (
 					<section className="country-card">
 						<figure className="country-flag">
-							<img src={country.flag} alt="" />
+							<img src={country.flag} alt="" data-testid="country-flag" />
 						</figure>
 						<article className="country-text">
-							<h2 className="country-name">{country.name}</h2>
+							<h2 className="country-name" data-testid="country-name">{country.name}</h2>
 							<div>
 								<section className="country-info">
 									<p>
@@ -111,7 +111,7 @@ const CountryDetails = () => {
 													<Link
 														to={`/details/${country.alpha3Code}`} key={Math.random()}
 													>
-														<div>
+														<div data-testid="border-country">
 															{country.name}
 														</div>
 													</Link>

@@ -59,7 +59,7 @@ const App = () => {
 	return (
 		<Router>
 			{/* <main id="App" className={`App ${theme}`}> */}
-			<main id="App" className={`App`}>
+			<main id="App" className={`App`} data-testid="App">
 				<div className="container">
 					<Navbar clickHandler={clickHandler} theme={theme} />
 					<Switch>
